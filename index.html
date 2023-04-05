@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    
+    <nav>
+      <ul>
+        <li><img src="./pic/nba-logo.jpg" alt="NBA_LOGO"></li>
+        
+        <li img="" class="active" id="teams-nav">NBA</li>
+        <li id="players-nav">Players</li>
+        <li id="stats-nav">Stats</li>
+        <li id="games-nav">Games</li>
+      </ul>
+    </nav>
+    <form id="search-form">
+      <input
+        type="radio"
+        id="search-type-players"
+        name="search-type"
+        value="players"
+        checked
+      />
+      <label for="search-type-players">Players</label>
+
+      <input
+        type="radio"
+        id="search-type-teams"
+        name="search-type"
+        value="teams"
+      />
+      <label for="search-type-teams">Teams</label>
+
+      <input
+        type="radio"
+        id="search-type-stats"
+        name="search-type"
+        value="stats"
+      />
+      <label for="search-type-stats">Stats</label>
+
+      <input
+        type="radio"
+        id="search-type-games"
+        name="search-type"
+        value="games"
+      />
+      <label for="search-type-games">Games</label>
+
+      <input type="text" id="search-query" placeholder="Search..." />
+
+      <div id="stats-id" style="display: none;">
+        <label for="stats-id-input">Stats ID:</label>
+        <input type="text" id="stats-id-input" name="stats-id-input" />
+      </div>
+
+      <div id="games-id" style="display: none;">
+        <label for="games-id-input">Games ID:</label>
+        <input type="text" id="games-id-input" name="games-id-input" />
+      </div>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="card-container">
+
+
+    <!-- <div id="card-container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        
+      <div class="card" style="width: 18rem;">
+    
+
+
+    <div class="data-display"></div>
+
+    <div id="data-container">
+      <input type="radio" id="stats" name="data-type" value="stats" checked />
+      <label for="stats">Stats</label>
+
+      <input type="radio" id="games" name="data-type" value="games" />
+      <label for="games">Games</label>
+    </div> -->
+
+    <div class="card-container" id="card-container">
+      project
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

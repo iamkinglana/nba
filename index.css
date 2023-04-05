@@ -1,0 +1,130 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    cursor: pointer;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  nav li.active {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Search form styles */
+  #search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  #search-form input[type="radio"],
+  #search-form label {
+    margin-right: 10px;
+  }
+  
+  #search-form input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    flex: 1 1 250px;
+  }
+  
+  #search-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #search-form button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  #search-form #stats-id,
+  #search-form #games-id {
+    margin-top: 10px;
+    display: none;
+  }
+  
+  #search-form #stats-id label,
+  #search-form #games-id label {
+    margin-right: 10px;
+  }
+  
+  #search-form #stats-id input,
+  #search-form #games-id input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Data display styles */
+  .data-display {
+    margin: 20px 0;
+  }
+  
+  /* Data container styles */
+  #data-container {
+    display: flex;
+    margin: 20px 0;
+  }
+  
+  #data-container input[type="radio"],
+  #data-container label {
+    margin-right: 10px;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    #search-form input[type="text"] {
+      flex: 1 1 100%;
+      margin-top: 10px;
+    }
+    
+    #search-form #stats-id,
+    #search-form #games-id {
+      display: block;
+    }
+  }
+  img {
+    width: 80%;
+    height: 2cm;
+    padding:inherit;
+  }
