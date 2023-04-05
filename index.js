@@ -30,14 +30,32 @@ const options = {
     fetch(endpoint, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.data);
-        data.data.forEach(game => {
-          const homeScore = document.createElement('span')
-          homeScore.textContent = game.home_team_score
-          cardContainer.append(homeScore)
-          
+
+        cardContainer.innerHTML=`
+        <div class="games-card">
+ 
+        <table style="width:100%">
+        <h5>Date: <span >${data.date}</span></h5>
+  <tr>
+    <th><span >${data.home_team_score}</span></th>
+    <th></th> 
+    <th><span >${data.visitor_team_score}</span></th>
+  </tr>
+  <tr style="height:200px">
+    <td><span>${data.home_team.full_name}</span ></td>
+    <td>-----VS-----</td>
+    <td><span>${data.visitor_team.full_name}</span ></td>
+  </tr>
+  <tr>
+    <td>${data.home_team.division}</td>
+    <td></td>
+    <td>${data.visitor_team.division}</td>
+  </tr>`
+
+
+        console.log(data.data)
         })
-      })
+      
       .catch((error) => {
         console.error(error);
       });
@@ -55,7 +73,7 @@ const options = {
         <h5>Height: <span >${data.height_feet}</span> feet</h5>
         <h5>Weight: <span > ${data.weight_pounds} </span> lbs</h5>
         <h5>Position: <span >${data.position} </span></h5>
-        <h5>Team: <span >${data.team.city}(Thunder)</span></h5>
+        <h5>Team: <span >${data.team.city}</span></h5>
         <h5>Conference: <span>${data.team.conference}</span></h5>
 
       </div>`
@@ -73,6 +91,16 @@ const options = {
     fetch(endpoint, options)
       .then((response) => response.json())
       .then((data) => {
+
+        cardContainer.innerHTML=`
+       <div class="team-card">
+        <h5>Team Name: <span >${data.full_name}</span></h5>
+        <h5>Common: <span >${data.name}</span></h5>
+        <h5>conference: <span > ${data.conference} </span></h5>
+        <h5>Division: <span >${data.division} </span></h5>
+        <h5>Abbreviation: <span >${data.abbreviation}</span></h5>`
+
+
         console.log(data);
       })
       .catch((error) => {
