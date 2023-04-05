@@ -49,10 +49,21 @@ const options = {
     fetch(endpoint, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+       cardContainer.innerHTML=`
+       <div class="player-card">
+        <h5>Name: <span >${data.first_name} ${data.last_name}</span></h5>
+        <h5>Height: <span >${data.height_feet}</span> feet</h5>
+        <h5>Weight: <span > ${data.weight_pounds} </span> lbs</h5>
+        <h5>Position: <span >${data.position} </span></h5>
+        <h5>Team: <span >${data.team.city}(Thunder)</span></h5>
+        <h5>Conference: <span>${data.team.conference}</span></h5>
+
+      </div>`
+        console.log(data)
+      
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.message);
       });
   }
   

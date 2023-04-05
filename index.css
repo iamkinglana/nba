@@ -128,3 +128,29 @@
     height: 2cm;
     padding:inherit;
   }
+  .cardcontainer{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+  /* player card */
+  .player-card{
+    background-color:lightgray;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .player-card h5{
+    color: blue;
+    font-size: 24px;
+  }
+  .player-card span{
+    color: black;
+  }
