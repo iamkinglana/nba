@@ -97,7 +97,7 @@ const options = {
 //     <td><span >${data.ftpct}</span></td>
 //   
   
-// </
+// <
 
 // `
 //         <div class="statsplayer-card">
