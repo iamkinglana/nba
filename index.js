@@ -35,33 +35,39 @@ const options = {
   
 
   <div class="gamestats">
+  
   <table>
-    <h5>Date: <span >5</span></h5>
-      <tr><h5>home team score <span >88</span></h5></tr>
-      <tr> <h5>Away team score: <span >92</span></h5></tr>
-      <tr><h5>home team id: <span >2</span></h5></tr>
-      <h5>away team id <span >3</span></h5>
-      <h5>Status <span >FINAL</span></h5>
+    <h5>Date: <span >${playerStats.game.date}</span></h5>
+      <tr><h5>Home Team Score <span >${playerStats.game.home_team_score}</span></h5></tr>
+      <tr> <h5>Away team score: <span >${playerStats.game.visitor_team_score}</span></h5></tr>
+      <tr><h5>home team id: <span >${playerStats.game.home_team_id}</span></h5></tr>
+      <h5>away team id <span >${playerStats.game.visitor_team_id}</span></h5>
+      <h5>Status <span >${playerStats.game.status}</span></h5>
     </table>
   </div>
 
   <div class="playerstats">
+  <figure class="card">
+        
+    
     <table>
-    <h5>Assist: <span >5</span></h5>
-      <h5>Blocks: <span >0</span></h5>
-      <h5>Dreb: <span >4</span></h5>
-      <h5>fg-pst: <span >0.455</span></h5>
-      <h5>ft-pst: <span >0.5</span></h5>  
+    <h5>AST: <span >${playerStats.ast}</span></h5>
+      <h5>BLK: <span >${playerStats.blk}</span></h5>
+      <h5>DREB: <span >4</span>${playerStats.dreb}</h5>
+      <h5>FG3 PCT: <span >${playerStats.fg3_pct}</span></h5>
+      <h5>FG PCT: <span >${playerStats.fg_pct}</span></h5>
+      <h5>FTM: <span >${playerStats.ftm}</span></h5>
+      <h5> PTS: <span >${playerStats.pts}</span></h5> 
+      <h5> REB: <span >${playerStats.reb}</span></h5> 
+      <h5> STL: <span >${playerStats.stl}</span></h5>
     </table>
+    </figure>
   </div>
-  <br>
-
-
-
-          
+  <br>     
           `
+
           cardContainer.append(statsContainer)
-        console.log(playerStats);
+        console.log(playerStats); 
         })
 //         console.log(data);
 //         cardContainer.innerHTML=`
@@ -120,6 +126,7 @@ const options = {
 
         cardContainer.innerHTML=`
         <div class="games-card">
+        <div class="games-card2">
  
         <table style="width:100%">
         <h5>Date: <span >${data.date}</span></h5>
@@ -137,7 +144,9 @@ const options = {
     <td>${data.home_team.division}</td>
     <td></td>
     <td>${data.visitor_team.division}</td>
-  </tr>`
+  </tr>
+  </div>
+  <div>`
 
 
         console.log(data.data)
@@ -146,6 +155,8 @@ const options = {
       .catch((error) => {
         console.error(error);
       });
+      
+
   }
   
   // Function to search for players by ID
@@ -193,6 +204,7 @@ const options = {
       .catch((error) => {
         console.error(error);
       });
+      
   }
   
   // Add event listener to search form

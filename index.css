@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('//pic/nba\ bacground.webp');
+    background: url('/pic/nba-vs-world-GRAPHIC-1536x864.png');
+    background-repeat: no-repeat;
+
+    
   }
   
   /* Global styles */
@@ -11,7 +14,7 @@
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #333;
+    color:white;
   }
   
   /* Navigation styles */
@@ -85,7 +88,7 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #333;
+    background-color:white;
     
     
 
@@ -113,7 +116,7 @@
 
   #search-form button:hover {
     background-color: #fff;
-    color: #333;
+    color:red;
     
   }
   
@@ -259,3 +262,128 @@
     display: flex;
     gap: 10px;
   }
+
+.playerstatscard{
+  background-color:lightgray;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    
+  height: 254px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  }
+.gamestats{
+  background-color:navy;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    
+  height: 254px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items:unset;
+  overflow: hidden;
+  border-radius: 20px;
+
+
+
+}
+.playerstats{
+  perspective: 500px;
+}
+
+.playerstats{
+  width: 200px;
+  height: 250px;
+  background: #16161d;
+  border: 2px solid #555555;
+  border-radius: 4px;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .5s;
+}
+
+.playerstats:hover{
+  transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+
+}
+.card_title {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  transition: transform .5s;
+  font: 700 1.5rem monospace;
+  text-shadow: -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+.playerstats:hover .card_title {
+  transform: translateZ(50px);
+}
+
+.games-card{
+  display:flex;
+  width: fit-content;
+ height: 300px;
+ background-image: linear-gradient(163deg, red 0%, blue 100%);
+ border-radius: 20px;
+ transition: all .3s;
+ position: relative;
+ justify-content: center;
+
+}
+.games-card2{
+  width: 190px;
+ height: 254px;
+ background-color: #1a1a1a;
+ border-radius:100px;
+ transition: all .2s;
+
+}
+.games-card2:hover{
+  transform: scale(0.98);
+ border-radius: 20px;
+}
+.games-card:hover{
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.like-button, .dislike-button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.like-button {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.dislike-button {
+  background-color: #e74c3c;
+  color: #fff;
+}
