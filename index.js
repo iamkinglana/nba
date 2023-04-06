@@ -15,47 +15,95 @@ const options = {
     const endpoint = `https://free-nba.p.rapidapi.com/stats/${query}`;
     fetch(endpoint, options)
       .then((response) => response.json())
-      .then((data) => {
-        cardContainer.innerHTML=`
-        <div class="stats-card">
+      .then(({data}) => {
+        data.forEach(playerStats => {
+          const statsContainer = document.createElement('div') 
+          statsContainer.className = 'playerstatscontainer'
+          statsContainer.innerHTML=`
+          
+      <div class="playerstatscard">
+      <h5>Name: <span >${playerStats.player.first_name} ${playerStats.player.last_name}</span></h5>
+      <h5>Height: <span >${playerStats.player.height_feet}</span> feet</h5>
+      <h5>Weight: <span >${playerStats.player.weight_pounds}</span> lbs</h5>
+      <h5>Position: <span >${playerStats.player.position}</span></h5>
+      <h5>Team: <span >${playerStats.team.name}</span></h5>
+      <h5>Conference: <span >${playerStats.team.conference}</span></h5>
 
-        <table style="width:100%">
-  <tr>
-    <th style="width:70%">NAME</th>
+    </div>
+    <br>
+
+  
+
+  <div class="gamestats">
+  <table>
+    <h5>Date: <span >5</span></h5>
+      <tr><h5>home team score <span >88</span></h5></tr>
+      <tr> <h5>Away team score: <span >92</span></h5></tr>
+      <tr><h5>home team id: <span >2</span></h5></tr>
+      <h5>away team id <span >3</span></h5>
+      <h5>Status <span >FINAL</span></h5>
+    </table>
+  </div>
+
+  <div class="playerstats">
+    <table>
+    <h5>Assist: <span >5</span></h5>
+      <h5>Blocks: <span >0</span></h5>
+      <h5>Dreb: <span >4</span></h5>
+      <h5>fg-pst: <span >0.455</span></h5>
+      <h5>ft-pst: <span >0.5</span></h5>  
+    </table>
+  </div>
+  <br>
+
+
+
+          
+          `
+          cardContainer.append(statsContainer)
+        console.log(playerStats);
+        })
+//         console.log(data);
+//         cardContainer.innerHTML=`
+        
+//         <div class="stats-card">
+
+//         <table style="width:100%">
+//   <tr>
+//     <th style="width:70%">NAME</th>
     
      
-    <th>AST</th>
-    <th>BLK</th>
-    <th>DREB</th>
-    <th>FG3A</th>
-    <th>FTPCT</th>
+//     <th>AST</th>
+//     <th>BLK</th>
+//     <th>DREB</th>
+//     <th>FG3A</th>
+//     <th>FTPCT</th>
 
-  </tr>
-  <tr>
-  <td><span >${data.team}</span></td>
+//   </tr>
+//   <tr>
+//   <td><span >${data.team}</span></td>
   
-    <td><span >${data.ast}</span></td>
-    <td><span >${data.blk}</span></td>
-    <td><span >${data.dreb}</span></td>
-    <td><span >${data.fg3a}</span></td>
-    <td><span >${data.ftpct}</span></td>
-  </tr>
+//     <td><span >${data.ast}</span></td>
+//     <td><span >${data.blk}</span></td>
+//     <td><span >${data.dreb}</span></td>
+//     <td><span >${data.fg3a}</span></td>
+//     <td><span >${data.ftpct}</span></td>
+//   </tr>
   
-</table>`
+// </table>`
 
-`
-        <div class="statsplayer-card">
+// `
+//         <div class="statsplayer-card">
         
-        <h5>Height: <span >${data.height_feet}</span> feet</h5>
-        <h5>Weight: <span > ${data.game.home_team_id} </span> lbs</h5>
-        <h5>Position: <span >${data.game.home_team_score} </span></h5>
-        <h5>Team: <span >${data.game.visitor_team_id}</span></h5>
-        <h5>Conference: <span>${data.game.visitor_team_score}</span></h5>
+//         <h5>Height: <span >${data.height_feet}</span> feet</h5>
+//         <h5>Weight: <span > ${data.game.home_team_id} </span> lbs</h5>
+//         <h5>Position: <span >${data.game.home_team_score} </span></h5>
+//         <h5>Team: <span >${data.game.visitor_team_id}</span></h5>
+//         <h5>Conference: <span>${data.game.visitor_team_score}</span></h5>
 
-      </div>`
+//       </div>`
 
 
-        console.log(data.data);
       })
       .catch((error) => {
         console.error(error);
