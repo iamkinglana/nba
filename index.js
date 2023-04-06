@@ -33,7 +33,7 @@ const options = {
     <br>
 
   
-
+    
 
   <div class="gamestats">
   
@@ -95,9 +95,9 @@ const options = {
 //     <td><span >${data.dreb}</span></td>
 //     <td><span >${data.fg3a}</span></td>
 //     <td><span >${data.ftpct}</span></td>
-//   
+//   </tr>
   
-// <
+// </table>`
 
 // `
 //         <div class="statsplayer-card">
