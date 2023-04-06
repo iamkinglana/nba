@@ -387,3 +387,14 @@
   background-color: #e74c3c;
   color: #fff;
 }
+body {
+  background: dodgerblue linear-gradient(45deg, aqua, dodgerblue, deeppink) fixed;
+
+}
+#comment-box, #post {
+  border: none;
+  border-radius: 5px;
+}
+#post:hover{
+  background-color: blue;
+}
