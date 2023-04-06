@@ -34,6 +34,7 @@ const options = {
 
   
 
+
   <div class="gamestats">
   
   <table>
@@ -96,7 +97,7 @@ const options = {
 //     <td><span >${data.ftpct}</span></td>
 //   </tr>
   
-// </table>`
+// </tab
 
 // `
 //         <div class="statsplayer-card">
