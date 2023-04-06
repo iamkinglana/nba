@@ -16,12 +16,51 @@ const options = {
     fetch(endpoint, options)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        cardContainer.innerHTML=`
+        <div class="stats-card">
+
+        <table style="width:100%">
+  <tr>
+    <th style="width:70%">NAME</th>
+    
+     
+    <th>AST</th>
+    <th>BLK</th>
+    <th>DREB</th>
+    <th>FG3A</th>
+    <th>FTPCT</th>
+
+  </tr>
+  <tr>
+  <td><span >${data.team}</span></td>
+  
+    <td><span >${data.ast}</span></td>
+    <td><span >${data.blk}</span></td>
+    <td><span >${data.dreb}</span></td>
+    <td><span >${data.fg3a}</span></td>
+    <td><span >${data.ftpct}</span></td>
+  </tr>
+  
+</table>`
+
+`
+        <div class="statsplayer-card">
         
+        <h5>Height: <span >${data.height_feet}</span> feet</h5>
+        <h5>Weight: <span > ${data.game.home_team_id} </span> lbs</h5>
+        <h5>Position: <span >${data.game.home_team_score} </span></h5>
+        <h5>Team: <span >${data.game.visitor_team_id}</span></h5>
+        <h5>Conference: <span>${data.game.visitor_team_score}</span></h5>
+
+      </div>`
+
+
+        console.log(data.data);
       })
       .catch((error) => {
         console.error(error);
       });
+      
   }
   
   // Function to search for games by ID
@@ -93,7 +132,7 @@ const options = {
       .then((data) => {
 
         cardContainer.innerHTML=`
-       <div class="team-card">
+       <div class="player-card">
         <h5>Team Name: <span >${data.full_name}</span></h5>
         <h5>Common: <span >${data.name}</span></h5>
         <h5>conference: <span > ${data.conference} </span></h5>
